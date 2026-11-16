@@ -1,0 +1,85 @@
+/* GLOBAL HEADER CSS ============================================= */
+.header-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 25px 80px;
+}
+
+.active-page{
+    font-weight: 700;
+    border-bottom: 5px solid;
+    border-color: #f8ab03;
+}
+
+/* LOGO CSS ================================================== */
+.logo-box{
+    transition: 0.3s ease ;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+    .logo-box:hover {
+        background-color: #0f2741;
+    }
+    .logo-box:active {
+        scale: 1.01;
+        box-shadow: 0px 0px 10px rgb(0, 0, 0, 1);
+    }
+
+    .logo-box:hover .header-logo{
+        filter: brightness(0) invert(1);
+    }
+
+/* NAV PAGES CSS ============================================= */
+.pages-nav{
+    display: flex;
+    gap: 75px;
+}   
+    .pages-nav > a{
+        text-decoration: none;
+        color: #0f2741;
+        font-size: 28px;
+        padding: 15px 20px;
+        border-radius: 10px;
+        transition: 0.3s ease;
+    }
+    .pages-nav > a:hover{
+        background-color: #0f2741;
+        color: white;
+    }
+    .pages-nav > a:active{
+        box-shadow: 0px 0px 10px rgb(0, 0, 0, 1);
+        background-color: #0f2741;
+        scale: 1.01;
+    }
+
+    .header-booking-btn{
+        display: flex;
+        cursor: pointer;
+        padding: 20px 30px;
+        color: white;
+        font-size: 25px;
+        font-weight: 700;
+        background-color:#f8ab03;
+        border: none;
+        border-radius: 6px;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+        transition: 0.3s ease ;
+    }   
+        .header-booking-btn:hover{
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+            background-color: #0f2741;
+        }
+
+        .header-booking-btn:active{
+            box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.5);
+            background-color: #0f2741;
+            scale: 1.01;
+        }
+
+        .paper-plane-icon{
+            margin-left: 15px;
+            width:25px;
+            height:25px;
+            filter: brightness(0) invert(1);
+        }
