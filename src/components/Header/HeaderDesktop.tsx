@@ -14,10 +14,45 @@ return (
         </NavLink>
 
         <nav className="pages-nav" aria-label="Main navigation">
-          <NavLink to="/" end>Home</NavLink>
-          <NavLink to="/about">About</NavLink>
-          <NavLink className="active-page" to="/services">Services</NavLink>
-          <NavLink to="/testimonials">Testimonials</NavLink>
+          <NavLink 
+            to="/" 
+            style={({ isActive }) => ({
+              fontWeight: isActive ? 'bold' : 'normal',
+              borderBottom: isActive ? '5px solid #f8ab03' : 'none'
+            })}
+          >
+          Home
+          </NavLink>
+
+                    <NavLink 
+            to="/about" 
+            style={({ isActive }) => ({
+              fontWeight: isActive ? 'bold' : 'normal',
+              borderBottom: isActive ? '5px solid #f8ab03' : 'none'
+            })}
+          >
+          About
+          </NavLink>
+
+                    <NavLink 
+            to="/services" 
+            style={({ isActive }) => ({
+              fontWeight: isActive ? 'bold' : 'normal',
+              borderBottom: isActive ? '5px solid #f8ab03' : 'none'
+            })}
+          >
+          Services
+          </NavLink>
+
+                    <NavLink 
+            to="/testimonials" 
+            style={({ isActive }) => ({
+              fontWeight: isActive ? 'bold' : 'normal',
+              borderBottom: isActive ? '5px solid #f8ab03' : 'none'
+            })}
+          >
+          Testimonials
+          </NavLink>
         </nav>
 
           <button

@@ -1,13 +1,16 @@
 import '../../styles/ServicesDesktop.css'
+import serviceImage1 from '../../assets/major-service-1.png';
+import serviceImage2 from '../../assets/major-service-2.png';
+import serviceImage3 from '../../assets/major-service-3.png';
 
-
-export function ServicesDesktop() {
+import { Link } from 'react-router-dom';
 
   // created Service custom type with for major and minor services ------------------------------------
   type Service = {
     id: number;
     title: string;
     description:string;
+    image?: string;
     category: 'major' | 'minor';
   }
 
@@ -18,18 +21,21 @@ export function ServicesDesktop() {
       title: "Responsible AI Adoption",
       description: "Turn AI potential into real business value, safely and responsibly. We help organizations identify meaningful opportunities, introduce practical AI solutions, and establish the safeguards needed for responsible implementation. Build confidence in emerging technologies while improving efficiency,supporting your team, and creating lasting value.",
       category: "major",
+      image: serviceImage1,
     },
     {
       id: 2,
       title: "AI Consulting",
       description: "Make informed decisions about AI with guidance tailored to your organization’s needs. From developing a clear strategy to evaluating tools and planning implementation, we help you navigate complex technologies with confidence. Discover practical opportunities, overcome challenges, and turn your AI ambitions into actionable results.",
       category: "major",
+      image: serviceImage2,      
     },
     {
       id: 3,
       title: "Grant Writing",
       description: "Give your ideas the strongest possible chance of securing funding. We help organizations identify relevant funding opportunities, develop compelling proposals, and communicate their goals with clarity and impact. From initial research to final submission, our approach helps you present a convincing case for investment in your vision.",
       category: "major",
+      image: serviceImage3,      
     },  
     {
     id: 4,
@@ -50,9 +56,9 @@ export function ServicesDesktop() {
     category: 'minor',
   }]
 
-
-
-
+  
+// Defined the component --------------------------------------------------------------------------------------------------------------
+export function ServicesDesktop() {
 
   return (
 
@@ -70,39 +76,42 @@ export function ServicesDesktop() {
         {services
           .filter((service) => service.category === 'major')                      // Filter out minor services
           .map((service) =>                                                       // map major services then render
-            <article className='major-service-card' key={service.id}>
+            <Link
+              to="/services" 
+              className='major-service-card' 
+              key={service.id}>
 
                 <span 
                   className={`major-service-number 
                               major-service-number-${service.id}
                             `}
-                >0{service.id}
+                >{String(service.id).padStart(2, '0')}
                 </span>
 
                 <img
                   className={`major-service-image major-service-image-${service.id}`} 
-                  src={`/src/assets/major-service-${service.id}.png`}  
+                  src={service.image}  
                   alt="Major-Service-Image" 
                 />   
 
                 <div className='major-service-information'>
                   <h2 className='service-title'>{service.title}</h2>
                   <p className='service-description'>{service.description}</p>
-                  <a href='#' className='major-learn-btn'>
+                  <span className='major-learn-link'>
                     Learn More
                     <svg 
                       className="major-learn-svg" 
                       viewBox="0 0 22 22" 
-                      aria-label="learn-more-icon"
+                      aria-hidden="true"
                     >
                       <path d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
                     </svg>
-                  </a>
+                  </span>
                 </div>
 
 
 
-            </article>                                                                                 
+            </Link>                                                                                 
           )}
       </section>
 
@@ -117,25 +126,28 @@ export function ServicesDesktop() {
         {services
           .filter((service) => service.category === 'minor')                       // Filter out major services
           .map((service) =>                                                        // map minor services then render                                                  
-            <article className='minor-service-card' key={service.id}>
-                <div className='colored-top'></div>
+            <Link
+            to="/services" 
+            className='minor-service-card' 
+            key={service.id}>
+                <div className='minor-service-accent' aria-hidden="true"></div>
                 <div className='minor-service-information'>
 
                   <h2 className='service-title'>{service.title}</h2>
                   <p className='service-description'>{service.description}</p>
-                  <a href='#' className='minor-learn-btn'>
+                  <span className='minor-learn-link'>
                     Learn More
                     <svg 
                       className="minor-learn-svg" 
                       viewBox="0 0 22 22" 
-                      aria-label="learn-more-icon"
+                      aria-hidden="true"
                     >
                       <path d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
                     </svg>
-                  </a>
+                  </span>
 
                 </div>
-            </article>                                                                              
+            </Link>                                                                              
           )}
       </section>
     </main>
