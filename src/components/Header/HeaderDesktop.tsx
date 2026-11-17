@@ -1,50 +1,39 @@
 import { NavLink } from 'react-router-dom';
 import { useBooking } from '../../hooks/useBooking';
+import '../../styles/HeaderDesktop.css'
 
 export function HeaderDesktop() {
   const { openBooking } = useBooking();
 
-  return (
-    <header>
-      <p>Yellow Sapphire</p>
-      <nav>
-        <NavLink
-          to="/"
-          end
-          style={({ isActive }) => ({
-            fontWeight: isActive ? 'bold' : 'normal',
-          })}
-        >
-          Home
-        </NavLink>{' '}
-        <NavLink
-          to="/about"
-          style={({ isActive }) => ({
-            fontWeight: isActive ? 'bold' : 'normal',
-          })}
-        >
-          About
-        </NavLink>{' '}
-        <NavLink
-          to="/services"
-          style={({ isActive }) => ({
-            fontWeight: isActive ? 'bold' : 'normal',
-          })}
-        >
-          Services
-        </NavLink>{' '}
-        <NavLink
-          to="/testimonials"
-          style={({ isActive }) => ({
-            fontWeight: isActive ? 'bold' : 'normal',
-          })}
-        >
-          Testimonials
+return (
+    <header className="header-desktop">
+      <div className="header-container">
+
+        <NavLink to="/" className="logo-box">
+          <img className="header-logo" src=".\src\assets\logo.svg" alt="" />
         </NavLink>
-      </nav>
-      <button type="button" onClick={openBooking}>
-        Book a meeting
-      </button>
+
+        <nav className="pages-nav" aria-label="Main navigation">
+          <NavLink to="/" end>Home</NavLink>
+          <NavLink to="/about">About</NavLink>
+          <NavLink className="active-page" to="/services">Services</NavLink>
+          <NavLink to="/testimonials">Testimonials</NavLink>
+        </nav>
+
+          <button
+            type="button"
+            className="header-booking-btn"
+            onClick={openBooking}
+          >
+            Book a Meeting
+            <img 
+                className='paper-plane-icon'
+                src=".\src\assets\paper-plane.svg" 
+                alt="paper-plane-icon"
+            />
+          </button>
+
+      </div>
     </header>
   );
 }
