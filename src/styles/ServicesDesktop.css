@@ -1,25 +1,46 @@
 /* GLOBAL CSS ========================================================== */
-body{
+
+.services-page {
+    /* Backgrounds */
+    --color-page-bg: #FAFAFA;
+    --color-card-active: #f5f2f2;
+    --color-white: #ffffff;
+
+    /* Brand colors */
+    --color-navy: #0f2741;
+    --color-gold: #f5ab0c;
+    --color-teal: #0e6484;
+
+    /* Text and accents */
+    --color-text: #4d4c49;
+    --color-accent: #98907c;
+
+    /* Borders and shadows */
+    --color-card-border: #99907c9a;
+    --color-card-shadow: rgba(107, 102, 92, 0.5);
+    --color-card-shadow-hover: rgba(107, 102, 92, 1);
+    --color-image-shadow: rgba(8, 8, 8, 0.5);
+}
+
+
+.services-page {
+    background-color: var(--color-page-bg);
+    min-height: 100vh;
+    padding: 60px 80px;
     font-family: 'Inter Variable', sans-serif;
 }
 
-.services-page {
-  background-color: #FAFAFA;
-  min-height: 100vh;
-  padding: 60px 80px;
-}
-/* ================================================================================ */
 
-/* -------------------------------------------------------------------------------------------------------------------------------------------- */
+
 
 /* Shared Services CSS =============================================================*/
             .service-title,
             .service-description{
-                color: #4d4c49;
+                color: var(--color-text);
                 overflow-wrap: break-word;
             }
             .service-title{
-                font-family: 'Playfair-display';
+                font-family: 'Playfair Display', serif;
                 font-weight: 400;
                 font-size: 36px;
                 margin-bottom: 0;
@@ -27,27 +48,34 @@ body{
             .service-description{
                 font-size: 18px;
             }
+  
 /* ================================================================================= */
 
-/* -------------------------------------------------------------------------------------------------------------------------------------------- */
+
 
 /* MAJOR Services titles ========================================================== */
 .services-intro {
     margin-bottom: 48px;
-    font-family: ;
 }
 
 .services-intro h1 {
     margin-bottom: 16px;
-    color: #0f2741;
+    color: var(--color-navy);
     font-size: 45px;
-    font-family: 'Playfair-display';
+    font-family: 'Playfair Display', serif;
     font-weight: 400;
 }
 
 .services-intro p {
-    color: #0f2741;
+    color: var(--color-navy);
     font-size: 18px;
+}
+
+/* For more accessibility */
+.major-service-card:focus-visible,
+.minor-service-card:focus-visible {
+    outline: 4px solid #f8ab03;
+    outline-offset: 4px;
 }
 /* ================================================================================ */
 
@@ -58,7 +86,6 @@ body{
     display: flex;
     flex-direction: column;
     gap: 40px;
-    justify-content: space-around;
     margin-bottom: 100px;
 }
 
@@ -66,19 +93,19 @@ body{
     .major-service-card{
         display: flex;
         position: relative;
-        border: 0.5px solid #99907c9a;
+        border: 0.5px solid var(--color-card-border);
         border-radius: 10px;
         padding: 35px 25px;
-        box-shadow: 0 0px 12px rgba(107, 102, 92, 0.5);
+        box-shadow: 0 0px 12px var(--color-card-shadow);
         transition: scale 0.4s;
-        cursor: pointer;
+        text-decoration: none;
     }
     .major-service-card:hover{
         scale: 1.02;
-        box-shadow: 0 0px 12px rgba(107, 102, 92, 1)
+        box-shadow: 0 0px 12px var(--color-card-shadow-hover)
     }
     .major-service-card:active{
-        background-color: #f5f2f2;;
+        background-color: var(--color-card-active);;
     }
 
         .major-service-information{
@@ -90,17 +117,17 @@ body{
                     width: 200px;
                     margin-right: 50px;
                     padding: 25px 30px;
-                    box-shadow: 0 0px 12px rgba(8, 8, 8, 0.5);
+                    box-shadow: 0 0px 12px var(--color-image-shadow);
                     object-fit: contain;
                 }
                 .major-service-image-1{
-                    border: 1px solid #f5ab0c;
+                    border: 1px solid var(--color-gold);
                 }
                 .major-service-image-2{
-                    border: 1px solid #0e2941;
+                    border: 1px solid var(--color-navy);
                 }
                 .major-service-image-3{
-                    border: 1px solid #0e6484;
+                    border: 1px solid var(--color-teal);
                 }
 
                 .major-service-number{
@@ -112,37 +139,37 @@ body{
                     width: 30px;
                     align-content: center;
                     text-align: center;
-                    color: white;
+                    color: var(--color-white);
                     font-size: 14px;
                 }
                 .major-service-number-1{
-                    background-color: #f5ab0c;
+                    background-color: var(--color-gold);
                 }
                 .major-service-number-2{
-                    background-color: #0e2941;
+                    background-color: var(--color-dark-navy)
                 } 
                 .major-service-number-3{
-                    background-color: #0e6484;
+                    background-color: var(--color-teal);
                 }
                 
-                .major-learn-btn{
+                .major-learn-link{
                     display: flex;
                     gap: 10px;
                     padding: 10px 15px;
                     justify-content: flex-end;
                     margin-left: auto;
-                    border: 2px solid #0f2741;
+                    border: 2px solid var(--color-navy);
                     border-radius: 6px;
-                    color: #0f2741;
+                    color: var(--color-navy);
                     font-weight: 700;
                     text-decoration: none;
                     align-items: center;
                     margin-top: 20px;
                     transition: background-color 0.2s ease, color 0.2s ease;
                 }
-                .major-learn-btn:hover{
-                    background-color: #0f2741;
-                    color: white;
+                .major-learn-link:hover{
+                    background-color: var(--color-navy);
+                    color: var(--color-white);
                 }
                     .major-learn-svg{
                         width: 22px;
@@ -151,7 +178,7 @@ body{
                     }
 /* ================================================================================= */
 
-/* -------------------------------------------------------------------------------------------------------------------------------------------- */
+
 
 /* MINOR Services titles ========================================================== */
 .minor-service-header{
@@ -161,18 +188,19 @@ body{
     gap: 20px;
 }
     .minor-service-header h1{
-        color: #0f2741;
-        font-family: 'Playfair-display';
+        color: var(--color-navy);
+        font-family: 'Playfair Display', serif;
         font-weight: 400;
         font-size: 45px;
     }
     .minor-service-header span{
         flex: 1;
-        background-color: #0f2741;
+        background-color: var(--color-navy);
         height: 3px;
         width: fit-content;
     }
 /* ================================================================================ */
+
 
 
 /* Minor Services ================================================================== */
@@ -187,25 +215,25 @@ body{
 
     .minor-service-card{
         display: flex;
-        flex: 1;
+        flex: 1 1 30%;
         flex-direction: column;
         position: relative;
-        border: 0.5px solid #99907c9a;
+        border: 0.5px solid var(--color-card-border);
         border-radius: 10px;
-        box-shadow: 0 0px 12px rgba(107, 102, 92, 0.5);
+        box-shadow: 0 0px 12px var(--color-card-shadow);
         transition: scale 0.4s;
-        cursor: pointer;
         width: 30%;
+        text-decoration: none;
     }
     .minor-service-card:hover{
         scale: 1.02;
-        box-shadow: 0 0px 12px rgba(107, 102, 92, 1)
+        box-shadow: 0 0px 12px var(--color-card-shadow-hover)
     }
     .minor-service-card:active{
-        background-color: #f5f2f2;;
+        background-color: var(--color-card-active);;
     }
-        .colored-top{
-            background-color: #98907c;
+        .minor-service-accent{
+            background-color: var(--color-accent);
             width: 100%;
             height: 25px;
         }
@@ -218,32 +246,33 @@ body{
         }
             .minor-service-information p{
                 display: -webkit-box;
-                -webkit-line-clamp: 4;        /* Change this number to how many lines you want visible */
+                -webkit-line-clamp: 4; 
                 -webkit-box-orient: vertical;
                 overflow: hidden;
                 text-overflow: ellipsis;
                 text-align: justify;
             }
                 
-                .minor-learn-btn{
+                .minor-learn-link{
                     display: flex;
                     gap: 10px;
                     padding: 10px 15px;
                     justify-content: flex-end;
                     margin-left: auto;
                     background-color: transparent;
-                    border: 2px solid #98907c;
+                    border: 2px solid var(--color-accent);
                     border-radius: 6px;
-                    color: #98907c;
+                    color: var(--color-accent);
                     font-weight: 700;
                     text-decoration: none;
                     align-items: center;
-                    margin-top: 25px;
+                    align-self: flex-end;
+                    margin-top: auto;
                     transition: background-color 0.2s ease, color 0.2s ease;
                 }
-                .minor-learn-btn:hover{
-                    background-color: #98907c;
-                    color: white;
+                .minor-learn-link:hover{
+                    background-color: var(--color-accent);
+                    color: var(--color-white);
                 }
                     .minor-learn-svg{
                         width: 22px;

@@ -6,12 +6,6 @@
     margin: 25px 80px;
 }
 
-.active-page{
-    font-weight: 700;
-    border-bottom: 5px solid;
-    border-color: #f8ab03;
-}
-
 /* LOGO CSS ================================================== */
 .logo-box{
     transition: 0.3s ease ;
@@ -42,6 +36,7 @@
         padding: 15px 20px;
         border-radius: 10px;
         transition: 0.3s ease;
+        font-family: 'Playfair Display', serif;
     }
     .pages-nav > a:hover{
         background-color: #0f2741;
