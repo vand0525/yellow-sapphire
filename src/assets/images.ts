@@ -13,9 +13,11 @@ import bookingStep1 from './images/booking-step-1.png';
 import bookingStep2 from './images/booking-step-2.png';
 import bookingStep3 from './images/booking-step-3.png';
 import logo from './logo.svg';
+import logoMark from './logo-mark.svg';
 
 export const images = {
   logo,
+  logoMark,
   homeHero,
   aboutHero,
   aboutFounder,
