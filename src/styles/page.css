@@ -1,0 +1,25 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-background);
+}
+
+.page-shell {
+  width: min(var(--page-max-width), 100%);
+  margin-inline: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-background);
+}
+
+.page-main {
+  flex: 1;
+  width: 100%;
+  padding-inline: var(--space-gutter);
+}

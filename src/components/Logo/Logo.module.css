@@ -1,0 +1,57 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--logo-gap);
+  color: var(--color-secondary);
+  text-decoration: none;
+  pointer-events: none;
+  user-select: none;
+}
+
+.mark {
+  width: var(--logo-mark-width);
+  height: var(--logo-mark-height);
+  flex-shrink: 0;
+  display: block;
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-size: var(--logo-wordmark-size);
+  line-height: var(--logo-wordmark-line);
+  font-weight: 700;
+  white-space: nowrap;
+  color: currentColor;
+}
+
+.headerDesktop {
+  --logo-mark-width: 48px;
+  --logo-mark-height: 81px;
+  --logo-gap: var(--space-4);
+  --logo-wordmark-size: var(--text-headline-large-size);
+  --logo-wordmark-line: var(--text-headline-large-line);
+}
+
+.headerMobile {
+  --logo-mark-width: 24px;
+  --logo-mark-height: 40px;
+  --logo-gap: var(--space-3);
+  --logo-wordmark-size: var(--text-headline-small-size);
+  --logo-wordmark-line: var(--text-headline-small-line);
+}
+
+.footerDesktop {
+  --logo-mark-width: 30px;
+  --logo-mark-height: 49px;
+  --logo-gap: var(--space-4);
+  --logo-wordmark-size: var(--text-headline-small-size);
+  --logo-wordmark-line: var(--text-headline-small-line);
+}
+
+.footerMobile {
+  --logo-mark-width: 16px;
+  --logo-mark-height: 26px;
+  --logo-gap: var(--space-2);
+  --logo-wordmark-size: var(--text-body-large-size);
+  --logo-wordmark-line: var(--text-body-large-line);
+}

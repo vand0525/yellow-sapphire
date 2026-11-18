@@ -1,5 +1,6 @@
 import { BookingDesktop } from './BookingDesktop';
 import { BookingMobile } from './BookingMobile';
+import './Booking.module.css';
 
 type BookingProps = {
   isDesktop: boolean;

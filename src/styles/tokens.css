@@ -1,0 +1,96 @@
+:root {
+  /* Colors */
+  --color-primary: #f4ab0b;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #e6d0a1;
+  --color-on-primary-container: #332403;
+  --color-secondary: #102742;
+  --color-secondary-container: #aec8e6;
+  --color-on-secondary-container: #0c1e33;
+  --color-tertiary: #106381;
+  --color-background: #fcfcfb;
+  --color-on-background: #333231;
+  --color-on-surface: #333231;
+  --color-outline: #99907c;
+
+  /* Font families */
+  --font-display: 'Playfair Display Variable', 'Playfair Display', serif;
+  --font-body: 'Inter Variable', Inter, sans-serif;
+
+  /* Type scale — desktop (rem, 16px root) */
+  --text-display-large-size: 3.5625rem;
+  --text-display-large-line: 4rem;
+  --text-display-medium-size: 2.8125rem;
+  --text-display-medium-line: 3.25rem;
+  --text-headline-large-size: 2rem;
+  --text-headline-large-line: 2.5rem;
+  --text-headline-medium-size: 1.75rem;
+  --text-headline-medium-line: 2.25rem;
+  --text-headline-small-size: 1.5rem;
+  --text-headline-small-line: 2rem;
+  --text-title-large-size: 1.375rem;
+  --text-title-large-line: 1.75rem;
+  --text-body-large-size: 1rem;
+  --text-body-large-line: 1.5rem;
+  --text-body-medium-size: 0.875rem;
+  --text-body-medium-line: 1.25rem;
+  --text-label-large-size: 0.875rem;
+  --text-label-large-line: 1.25rem;
+  --text-label-medium-size: 0.75rem;
+  --text-label-medium-line: 1rem;
+
+  /* Type scale — mobile */
+  --text-display-small-size: 2.25rem;
+  --text-display-small-line: 2.75rem;
+
+  /* Semantic type */
+  --text-display-size: var(--text-display-small-size);
+  --text-display-line: var(--text-display-small-line);
+  --text-headline-size: var(--text-headline-small-size);
+  --text-headline-line: var(--text-headline-small-line);
+  --text-title-size: var(--text-title-large-size);
+  --text-title-line: var(--text-title-large-line);
+  --text-body-size: var(--text-body-large-size);
+  --text-body-line: var(--text-body-large-line);
+  --text-label-size: var(--text-label-large-size);
+  --text-label-line: var(--text-label-large-line);
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+  /* Layout */
+  --space-gutter: var(--space-5);
+  --space-section: var(--space-8);
+  --space-stack: var(--space-4);
+  --size-button: 60px;
+  --size-button-compact: 42px;
+
+  /* Radius */
+  --radius-sm: 4px;
+
+  /* Page */
+  --page-max-width: 1440px;
+}
+
+@media (min-width: 800px) {
+  :root {
+    --text-display-size: var(--text-display-large-size);
+    --text-display-line: var(--text-display-large-line);
+    --text-headline-size: var(--text-headline-large-size);
+    --text-headline-line: var(--text-headline-large-line);
+
+    --space-gutter: var(--space-12);
+    --space-section: var(--space-16);
+    --space-stack: var(--space-6);
+  }
+}
