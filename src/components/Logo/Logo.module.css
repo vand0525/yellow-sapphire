@@ -28,30 +28,30 @@
   --logo-mark-width: 48px;
   --logo-mark-height: 81px;
   --logo-gap: var(--space-4);
-  --logo-wordmark-size: 2rem;
-  --logo-wordmark-line: 2.5rem;
+  --logo-wordmark-size: var(--text-headline-large-size);
+  --logo-wordmark-line: var(--text-headline-large-line);
 }
 
 .headerMobile {
   --logo-mark-width: 24px;
   --logo-mark-height: 40px;
   --logo-gap: var(--space-3);
-  --logo-wordmark-size: 1.5rem;
-  --logo-wordmark-line: 2rem;
+  --logo-wordmark-size: var(--text-headline-small-size);
+  --logo-wordmark-line: var(--text-headline-small-line);
 }
 
 .footerDesktop {
   --logo-mark-width: 30px;
   --logo-mark-height: 49px;
   --logo-gap: var(--space-4);
-  --logo-wordmark-size: 1.25rem;
-  --logo-wordmark-line: 1.75rem;
+  --logo-wordmark-size: var(--text-headline-small-size);
+  --logo-wordmark-line: var(--text-headline-small-line);
 }
 
 .footerMobile {
   --logo-mark-width: 16px;
   --logo-mark-height: 26px;
   --logo-gap: var(--space-2);
-  --logo-wordmark-size: 1rem;
-  --logo-wordmark-line: 1.5rem;
+  --logo-wordmark-size: var(--text-body-large-size);
+  --logo-wordmark-line: var(--text-body-large-line);
 }
