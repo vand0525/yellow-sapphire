@@ -31,6 +31,22 @@
 }
 
 
+.services-loading,
+.services-error {
+    text-align: center;
+    padding: 60px 20px;
+    font-size: 18px;
+}
+
+.services-loading {
+    color: var(--color-dark-navy);
+    font-size: 35px;
+}
+
+.services-error {
+    color: #881111;
+    font-size: 35px;
+}
 
 
 /* Shared Services CSS =============================================================*/
@@ -142,13 +158,13 @@
                     color: var(--color-white);
                     font-size: 14px;
                 }
-                .major-service-number-1{
+                .major-service-number-0{
                     background-color: var(--color-gold);
                 }
-                .major-service-number-2{
-                    background-color: var(--color-dark-navy)
+                .major-service-number-1{
+                    background-color: var(--color-navy)
                 } 
-                .major-service-number-3{
+                .major-service-number-2{
                     background-color: var(--color-teal);
                 }
                 

@@ -1,69 +1,51 @@
-import '../../styles/ServicesDesktop.css'
-import serviceImage1 from '../../assets/major-service-1.png';
-import serviceImage2 from '../../assets/major-service-2.png';
-import serviceImage3 from '../../assets/major-service-3.png';
+import '../../styles/ServicesDesktop.css'                     
+import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { getServices, type Service } from '../../lib/services'
 
-import { Link } from 'react-router-dom';
-
-  // created Service custom type with for major and minor services ------------------------------------
-  type Service = {
-    id: number;
-    title: string;
-    description:string;
-    image?: string;
-    category: 'major' | 'minor';
-  }
-
-  // Services Data ------------------------------------------------------------------------------------
-  const services: Service[] = [
-    {
-      id: 1,
-      title: "Responsible AI Adoption",
-      description: "Turn AI potential into real business value, safely and responsibly. We help organizations identify meaningful opportunities, introduce practical AI solutions, and establish the safeguards needed for responsible implementation. Build confidence in emerging technologies while improving efficiency,supporting your team, and creating lasting value.",
-      category: "major",
-      image: serviceImage1,
-    },
-    {
-      id: 2,
-      title: "AI Consulting",
-      description: "Make informed decisions about AI with guidance tailored to your organization’s needs. From developing a clear strategy to evaluating tools and planning implementation, we help you navigate complex technologies with confidence. Discover practical opportunities, overcome challenges, and turn your AI ambitions into actionable results.",
-      category: "major",
-      image: serviceImage2,      
-    },
-    {
-      id: 3,
-      title: "Grant Writing",
-      description: "Give your ideas the strongest possible chance of securing funding. We help organizations identify relevant funding opportunities, develop compelling proposals, and communicate their goals with clarity and impact. From initial research to final submission, our approach helps you present a convincing case for investment in your vision.",
-      category: "major",
-      image: serviceImage3,      
-    },  
-    {
-    id: 4,
-    title: 'AI Roadmap',
-    description: 'Develop a clear strategy for AI adoption. We help you assess your readiness, identify opportunities, and establish practical priorities aligned with your organization’s goals.',
-    category: 'minor',
-  },
-  {
-    id: 5,
-    title: 'AI Training',
-    description: 'Equip your team with the skills to use AI effectively. Our practical training builds confidence, encourages responsible adoption, and helps employees apply AI in their daily work..',
-    category: 'minor',
-  },
-  {
-    id: 6,
-    title: 'AI Project Management',
-    description: 'Bring your AI initiatives from planning to completion. We help coordinate resources, manage timelines, and oversee implementation to keep your projects on track.',
-    category: 'minor',
-  }]
 
   
-// Defined the component --------------------------------------------------------------------------------------------------------------
 export function ServicesDesktop() {
 
+  // Fetch the data from sanity Studio ----------------------------------------------------------------------------------
+  const [services, setServices] = useState<Service[]>([])                               // store services
+  const [loading, setLoading] = useState(true);                                         // indicate loading data
+  const [error, setError] = useState<string | null>(null)                               // store fetching error
+
+  useEffect(()=>{                                                                         
+    async function loadServices(){
+      try{
+        const data = await getServices();                                               // get data from sanity
+        setServices(data);                                                              // update the page with data
+        //console.log(data);
+        //throw new Error('Testing error')
+      } catch (error){
+        setError('Unable to load services. Please try again later.')
+        console.error('Failed to load services', error)
+      } finally {
+        setLoading(false)
+      }
+    }
+    loadServices();
+  }, [])
+  // --------------------------------------------------------------------------------------------------------------------
+
+
+  // Show loading services message ========================================
+  if (loading) {
+    return <p className="services-loading">Loading services...</p>
+  }
+
+   // Show error alert ====================================================
+
+  if (error) {
+    return <p className="services-error" role="alert">{error}</p>
+  }
+
+
   return (
-
     <main className="services-page">
-
+      
       {/* SERVICE INTRO ======================================================================================================================= */}
       <section className="services-intro">
         <h1>Our Services. (desktop)</h1>
@@ -75,27 +57,27 @@ export function ServicesDesktop() {
       <section className='major-services-grid'>
         {services
           .filter((service) => service.category === 'major')                      // Filter out minor services
-          .map((service) =>                                                       // map major services then render
+          .map((service, index) =>                                                       // map major services then render
             <Link
               to="/services" 
               className='major-service-card' 
-              key={service.id}>
+              key={service._id}>
 
                 <span 
                   className={`major-service-number 
-                              major-service-number-${service.id}
+                              major-service-number-${index}
                             `}
-                >{String(service.id).padStart(2, '0')}
+                >0{index+1}
                 </span>
 
                 <img
-                  className={`major-service-image major-service-image-${service.id}`} 
-                  src={service.image}  
+                  className={`major-service-image major-service-image-${service._id}`} 
+                  src={service.imageUrl}  
                   alt="Major-Service-Image" 
                 />   
 
                 <div className='major-service-information'>
-                  <h2 className='service-title'>{service.title}</h2>
+                  <h2 className='service-title'>{service.name}</h2>
                   <p className='service-description'>{service.description}</p>
                   <span className='major-learn-link'>
                     Learn More
@@ -129,11 +111,11 @@ export function ServicesDesktop() {
             <Link
             to="/services" 
             className='minor-service-card' 
-            key={service.id}>
+            key={service._id}>
                 <div className='minor-service-accent' aria-hidden="true"></div>
                 <div className='minor-service-information'>
 
-                  <h2 className='service-title'>{service.title}</h2>
+                  <h2 className='service-title'>{service.name}</h2>
                   <p className='service-description'>{service.description}</p>
                   <span className='minor-learn-link'>
                     Learn More
@@ -151,6 +133,5 @@ export function ServicesDesktop() {
           )}
       </section>
     </main>
-
-  )
-}
+    )
+  }
