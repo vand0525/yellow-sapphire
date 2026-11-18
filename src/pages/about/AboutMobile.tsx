@@ -1,3 +1,5 @@
+import styles from './AboutMobile.module.css';
+
 export function AboutMobile() {
-  return <main>About (mobile)</main>;
+  return <main className={styles.root}>About (mobile)</main>;
 }

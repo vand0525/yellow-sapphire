@@ -1,0 +1,96 @@
+:root {
+  /* Colors */
+  --color-primary: #f4ab0b;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #e6d0a1;
+  --color-on-primary-container: #332403;
+  --color-secondary: #102742;
+  --color-secondary-container: #aec8e6;
+  --color-on-secondary-container: #0c1e33;
+  --color-tertiary: #106381;
+  --color-background: #fcfcfb;
+  --color-on-background: #333231;
+  --color-on-surface: #333231;
+  --color-outline: #99907c;
+
+  /* Font families */
+  --font-display: 'Playfair Display Variable', 'Playfair Display', serif;
+  --font-body: 'Inter Variable', Inter, sans-serif;
+
+  /* Type scale — desktop */
+  --text-display-large-size: 57px;
+  --text-display-large-line: 64px;
+  --text-display-medium-size: 45px;
+  --text-display-medium-line: 52px;
+  --text-headline-large-size: 32px;
+  --text-headline-large-line: 40px;
+  --text-headline-medium-size: 28px;
+  --text-headline-medium-line: 36px;
+  --text-headline-small-size: 24px;
+  --text-headline-small-line: 32px;
+  --text-title-large-size: 22px;
+  --text-title-large-line: 28px;
+  --text-body-large-size: 16px;
+  --text-body-large-line: 24px;
+  --text-body-medium-size: 14px;
+  --text-body-medium-line: 20px;
+  --text-label-large-size: 14px;
+  --text-label-large-line: 20px;
+  --text-label-medium-size: 12px;
+  --text-label-medium-line: 16px;
+
+  /* Type scale — mobile */
+  --text-display-small-size: 36px;
+  --text-display-small-line: 44px;
+
+  /* Semantic type */
+  --text-display-size: var(--text-display-small-size);
+  --text-display-line: var(--text-display-small-line);
+  --text-headline-size: var(--text-headline-small-size);
+  --text-headline-line: var(--text-headline-small-line);
+  --text-title-size: var(--text-title-large-size);
+  --text-title-line: var(--text-title-large-line);
+  --text-body-size: var(--text-body-large-size);
+  --text-body-line: var(--text-body-large-line);
+  --text-label-size: var(--text-label-large-size);
+  --text-label-line: var(--text-label-large-line);
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+  /* Layout */
+  --space-gutter: var(--space-5);
+  --space-section: var(--space-8);
+  --space-stack: var(--space-4);
+  --size-button: 60px;
+  --size-button-compact: 42px;
+
+  /* Radius */
+  --radius-sm: 4px;
+
+  /* Page */
+  --page-max-width: 1440px;
+}
+
+@media (min-width: 800px) {
+  :root {
+    --text-display-size: var(--text-display-large-size);
+    --text-display-line: var(--text-display-large-line);
+    --text-headline-size: var(--text-headline-large-size);
+    --text-headline-line: var(--text-headline-large-line);
+
+    --space-gutter: var(--space-12);
+    --space-section: var(--space-16);
+    --space-stack: var(--space-6);
+  }
+}

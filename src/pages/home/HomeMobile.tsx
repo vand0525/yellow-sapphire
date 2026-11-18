@@ -1,3 +1,5 @@
+import styles from './HomeMobile.module.css';
+
 export function HomeMobile() {
-  return <main>Home (mobile)</main>;
+  return <main className={styles.root}>Home (mobile)</main>;
 }

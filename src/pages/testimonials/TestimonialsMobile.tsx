@@ -1,3 +1,5 @@
+import styles from './TestimonialsMobile.module.css';
+
 export function TestimonialsMobile() {
-  return <main>Testimonials (mobile)</main>;
+  return <main className={styles.root}>Testimonials (mobile)</main>;
 }

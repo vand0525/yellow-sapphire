@@ -1,3 +1,5 @@
+import styles from './TestimonialsDesktop.module.css';
+
 export function TestimonialsDesktop() {
-  return <main>Testimonials (desktop)</main>;
+  return <main className={styles.root}>Testimonials (desktop)</main>;
 }

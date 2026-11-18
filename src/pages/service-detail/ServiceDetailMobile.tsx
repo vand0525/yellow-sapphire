@@ -1,3 +1,5 @@
+import styles from './ServiceDetailMobile.module.css';
+
 export function ServiceDetailMobile() {
-  return <main>Service Detail (mobile)</main>;
+  return <main className={styles.root}>Service Detail (mobile)</main>;
 }

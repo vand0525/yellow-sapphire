@@ -10,9 +10,13 @@ export function AppLayout() {
 
   return (
     <BookingProvider isDesktop={isDesktop}>
-      <Header isDesktop={isDesktop} />
-      <Outlet context={{ isDesktop } satisfies PageContext} />
-      <Footer isDesktop={isDesktop} />
+      <div className="page-shell">
+        <Header isDesktop={isDesktop} />
+        <div className="page-main">
+          <Outlet context={{ isDesktop } satisfies PageContext} />
+        </div>
+        <Footer isDesktop={isDesktop} />
+      </div>
     </BookingProvider>
   );
 }
