@@ -17,31 +17,31 @@
   --font-display: 'Playfair Display Variable', 'Playfair Display', serif;
   --font-body: 'Inter Variable', Inter, sans-serif;
 
-  /* Type scale — desktop */
-  --text-display-large-size: 57px;
-  --text-display-large-line: 64px;
-  --text-display-medium-size: 45px;
-  --text-display-medium-line: 52px;
-  --text-headline-large-size: 32px;
-  --text-headline-large-line: 40px;
-  --text-headline-medium-size: 28px;
-  --text-headline-medium-line: 36px;
-  --text-headline-small-size: 24px;
-  --text-headline-small-line: 32px;
-  --text-title-large-size: 22px;
-  --text-title-large-line: 28px;
-  --text-body-large-size: 16px;
-  --text-body-large-line: 24px;
-  --text-body-medium-size: 14px;
-  --text-body-medium-line: 20px;
-  --text-label-large-size: 14px;
-  --text-label-large-line: 20px;
-  --text-label-medium-size: 12px;
-  --text-label-medium-line: 16px;
+  /* Type scale — desktop (rem, 16px root) */
+  --text-display-large-size: 3.5625rem;
+  --text-display-large-line: 4rem;
+  --text-display-medium-size: 2.8125rem;
+  --text-display-medium-line: 3.25rem;
+  --text-headline-large-size: 2rem;
+  --text-headline-large-line: 2.5rem;
+  --text-headline-medium-size: 1.75rem;
+  --text-headline-medium-line: 2.25rem;
+  --text-headline-small-size: 1.5rem;
+  --text-headline-small-line: 2rem;
+  --text-title-large-size: 1.375rem;
+  --text-title-large-line: 1.75rem;
+  --text-body-large-size: 1rem;
+  --text-body-large-line: 1.5rem;
+  --text-body-medium-size: 0.875rem;
+  --text-body-medium-line: 1.25rem;
+  --text-label-large-size: 0.875rem;
+  --text-label-large-line: 1.25rem;
+  --text-label-medium-size: 0.75rem;
+  --text-label-medium-line: 1rem;
 
   /* Type scale — mobile */
-  --text-display-small-size: 36px;
-  --text-display-small-line: 44px;
+  --text-display-small-size: 2.25rem;
+  --text-display-small-line: 2.75rem;
 
   /* Semantic type */
   --text-display-size: var(--text-display-small-size);
