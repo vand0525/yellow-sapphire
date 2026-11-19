@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { useBooking } from '../../hooks/useBooking';
+import { Logo } from '../../components/Logo/Logo';
 import styles from './HeaderDesktop.module.css'
 
 export function HeaderDesktop() {
@@ -9,8 +10,8 @@ return (
     <header className={styles['header-desktop']}>
       <div className={styles['header-container']}>
 
-        <NavLink to="/" className={styles['logo-box']}>
-          <img className={styles['header-logo']} src=".\src\assets\logo.svg" alt="" />
+        <NavLink to="/" className={styles['header-logo']}>
+          <Logo variant='headerDesktop'  />
         </NavLink>
 
         <nav className={styles['pages-nav']} aria-label="Main navigation">

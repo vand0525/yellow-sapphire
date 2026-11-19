@@ -7,22 +7,24 @@
 }
 
 /* LOGO CSS ================================================== */
-.logo-box{
-    transition: var(--transition-normal);
-    padding: var(--space-3) var(--space-4);
-    border-radius: var(--radius-lg);
+.header-logo{
+        transition: var(--transition-normal);
+        padding: var(--space-3) var(--space-4);
+        border-radius: var(--radius-lg);
 }
-    .logo-box:hover {
-        background-color: var(--color-secondary);
-    }
-    .logo-box:active {
-        scale: var(--scale-active);
-        box-shadow: var(--shadow-lg)
-    }
+.header-logo:hover {
+    background-color: var(--color-secondary);
+}
 
-    .logo-box:hover .header-logo{
-        filter: brightness(0) invert(1);
-    }
+.header-logo:hover > span {
+    color: var(--color-on-primary);
+}
+
+.header-logo:active {
+    scale: var(--scale-active);
+    color: var(--color-on-primary);
+    box-shadow: var(--shadow-lg)
+}
 
 /* NAV PAGES CSS ============================================= */
 .pages-nav{
