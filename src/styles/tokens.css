@@ -12,6 +12,8 @@
   --color-on-background: #333231;
   --color-on-surface: #333231;
   --color-outline: #99907c;
+  --color-error: #881111;
+  --color-surface-active: #f5f2f2;
 
   /* Font families */
   --font-display: 'Playfair Display Variable', 'Playfair Display', serif;
@@ -56,6 +58,7 @@
   --text-label-line: var(--text-label-large-line);
 
   /* Spacing */
+  --space-0: 0px;
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;
@@ -77,6 +80,23 @@
 
   /* Radius */
   --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+
+  /* Shadows */
+  --shadow-sm: 0 0px 3px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 0px 6px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 0px 12px rgba(0, 0, 0, 0.2);
+  --shadow-white-md: 0 0 12px rgba(255, 255, 255, 0.2);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  /* Interaction */
+  --scale-active: 0.98;
+  --scale-hover: 1.02;
 
   /* Page */
   --page-max-width: 1440px;
