@@ -174,11 +174,6 @@
                     background-color: var(--color-secondary);
                     color: var(--color-on-primary);
                 }
-                    .major-learn-svg{
-                        width: var(--space-6);
-                        height: var(--space-6);
-                        fill: currentColor;
-                    }
 /* ================================================================================= */
 
 
@@ -282,11 +277,6 @@
                     background-color: var(--color-outline);
                     color: var(--color-on-primary);
                 }
-                    .minor-learn-svg{
-                        width: var(--space-6);
-                        height: var(--space-6);
-                        fill: currentColor;
-                    }
 /* ================================================================================= */
 
 

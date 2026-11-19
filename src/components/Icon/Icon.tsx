@@ -9,6 +9,7 @@ import {
   Menu,
   Quote,
   Send,
+  Info,
   ShieldCheck,
   ShoppingBag,
   Wrench,
@@ -31,13 +32,14 @@ const iconMap = {
   menu: Menu,
   close: X,
   send: Send,
+  info: Info,
 } as const satisfies Record<string, LucideIcon>;
 
 export type IconName = keyof typeof iconMap;
 
 const sizeMap = {
   sm: 20,
-  md: 24,
+  md: 30,
   lg: 48,
   xl: 64,
 } as const;

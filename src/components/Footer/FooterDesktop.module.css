@@ -30,7 +30,7 @@
         color: var(--color-on-primary);
         font-family: var(--font-body);
         font-size: var(--text-headline-small-size);
-        font-weight: 700;
+        font-weight: 500;
         line-height: var(--text-headline-small-line);
         background-color: var(--color-primary);
         border: none;
@@ -46,13 +46,6 @@
             box-shadow: var(--shadow-white-md);
             background-color: var(--color-secondary);
             scale: var(--scale-active);
-        }
-
-        .paper-plane-icon{
-            margin-left: var(--space-4);
-            width: var(--space-6);
-            height: var(--space-6);
-            filter: brightness(0) invert(1);
         }
 
 /* ================================================================================= */
