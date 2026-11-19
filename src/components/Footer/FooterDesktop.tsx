@@ -1,5 +1,6 @@
 import { useBooking } from '../../hooks/useBooking';
 import { NavLink } from 'react-router-dom';
+import { Logo } from '../../components/Logo/Logo';
 import styles from "./FooterDesktop.module.css"
 
 export function FooterDesktop() {
@@ -33,8 +34,8 @@ export function FooterDesktop() {
 
 
       <section className={styles['footer-copyright-section']}>
-        <NavLink to="/" className={styles['footer-logo-box']}>
-          <img className={styles['footer-logo']} src=".\src\assets\logo.svg" alt="" />
+        <NavLink to="/" className={styles['footer-logo']}>
+          <Logo variant='footerDesktop'  />
         </NavLink>
 
         <div className={styles['legal-nav']} >

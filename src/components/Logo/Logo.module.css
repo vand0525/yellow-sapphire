@@ -32,6 +32,7 @@
   --logo-wordmark-line: var(--text-headline-large-line);
 }
 
+
 .headerMobile {
   --logo-mark-width: 24px;
   --logo-mark-height: 40px;
