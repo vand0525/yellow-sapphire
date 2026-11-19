@@ -1,10 +1,10 @@
-import '../../styles/ServicesDesktop.css'                     
+import styles from './ServicesDesktop.module.css'                   
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { getServices, type Service } from '../../lib/services'
 
 
-  
+
 export function ServicesDesktop() {
 
   // Fetch the data from sanity Studio ----------------------------------------------------------------------------------
@@ -33,56 +33,60 @@ export function ServicesDesktop() {
 
   // Show loading services message ========================================
   if (loading) {
-    return <p className="services-loading">Loading services...</p>
+    return <p className={styles['services-loading']}>Loading services...</p>
   }
 
    // Show error alert ====================================================
 
   if (error) {
-    return <p className="services-error" role="alert">{error}</p>
+    return <p className={styles['services-error']} role="alert">{error}</p>
   }
 
 
   return (
-    <main className="services-page">
+    <main className={styles['services-page']}>
       
       {/* SERVICE INTRO ======================================================================================================================= */}
-      <section className="services-intro">
+      <section className={styles['services-intro']}>
         <h1>Our Services. (desktop)</h1>
         <p>Our core services focus on helping organizations embrace new opportunities, overcome challenges, and achieve meaningful results.</p>
       </section>
 
       {/* SERVICES GRID ======================================================================================================================= */}
       {/* Major Services ---------------------------------------------------------------------------------------*/} 
-      <section className='major-services-grid'>
+      <section className={styles['major-services-grid']}>
         {services
           .filter((service) => service.category === 'major')                      // Filter out minor services
           .map((service, index) =>                                                       // map major services then render
             <Link
               to="/services" 
-              className='major-service-card' 
+              className={styles['major-service-card']}
               key={service._id}>
 
                 <span 
-                  className={`major-service-number 
-                              major-service-number-${index}
-                            `}
+                  className={`
+                    ${styles['major-service-number']} 
+                    ${styles[`major-service-number-${index}`]}
+                  `}
                 >0{index+1}
                 </span>
 
                 <img
-                  className={`major-service-image major-service-image-${index}`} 
+                  className={`
+                    ${styles['major-service-image']} 
+                    ${styles[`major-service-image-${index}`]}
+                  `}
                   src={service.imageUrl}  
                   alt="Major-Service-Image" 
                 />   
 
-                <div className='major-service-information'>
-                  <h2 className='service-title'>{service.name}</h2>
-                  <p className='service-description'>{service.description}</p>
-                  <span className='major-learn-link'>
+                <div className={styles['major-service-information']}>
+                  <h2 className={styles['service-title']}>{service.name}</h2>
+                  <p className={styles['service-description']}>{service.description}</p>
+                  <span className={styles['major-learn-link']}>
                     Learn More
                     <svg 
-                      className="major-learn-svg" 
+                      className={styles['major-learn-svg']}
                       viewBox="0 0 22 22" 
                       aria-hidden="true"
                     >
@@ -99,28 +103,28 @@ export function ServicesDesktop() {
 
 
       {/* Minor Services -----------------------------------------------------------------------------------------*/} 
-      <div className='minor-service-header'>
+      <div className={styles['minor-service-header']}>
           <h1>Other Services</h1>
           <span></span>
       </div>
 
-      <section className='minor-services-grid'>
+      <section className={styles['minor-services-grid']}>
         {services
           .filter((service) => service.category === 'minor')                       // Filter out major services
           .map((service) =>                                                        // map minor services then render                                                  
             <Link
             to="/services" 
-            className='minor-service-card' 
+            className={styles['minor-service-card']}
             key={service._id}>
-                <div className='minor-service-accent' aria-hidden="true"></div>
-                <div className='minor-service-information'>
+                <div className={styles['minor-service-accent']} aria-hidden="true"></div>
+                <div className={styles['minor-service-information']}>
 
-                  <h2 className='service-title'>{service.name}</h2>
-                  <p className='service-description'>{service.description}</p>
-                  <span className='minor-learn-link'>
+                  <h2 className={styles['service-title']}>{service.name}</h2>
+                  <p className={styles['service-description']}>{service.description}</p>
+                  <span className={styles['minor-learn-link']}>
                     Learn More
                     <svg 
-                      className="minor-learn-svg" 
+                      className={styles['minor-learn-svg']}
                       viewBox="0 0 22 22" 
                       aria-hidden="true"
                     >
