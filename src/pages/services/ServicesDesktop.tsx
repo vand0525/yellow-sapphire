@@ -71,7 +71,7 @@ export function ServicesDesktop() {
                 </span>
 
                 <img
-                  className={`major-service-image major-service-image-${service._id}`} 
+                  className={`major-service-image major-service-image-${index}`} 
                   src={service.imageUrl}  
                   alt="Major-Service-Image" 
                 />   
