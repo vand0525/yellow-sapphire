@@ -1,6 +1,7 @@
 import { useBooking } from '../../hooks/useBooking';
 import { NavLink } from 'react-router-dom';
 import { Logo } from '../../components/Logo/Logo';
+import { Icon } from '../Icon/Icon';
 import styles from "./FooterDesktop.module.css"
 
 export function FooterDesktop() {
@@ -24,11 +25,7 @@ export function FooterDesktop() {
             onClick={openBooking}
           >
             Book a Meeting
-            <img 
-                className={styles['paper-plane-icon']}
-                src=".\src\assets\paper-plane.svg" 
-                alt="paper-plane-icon"
-            />
+            <Icon name='send'></Icon>
         </button>
       </section>
 

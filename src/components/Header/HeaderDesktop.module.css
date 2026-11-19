@@ -75,9 +75,6 @@
             scale: var(--scale-active);
         }
 
-        .paper-plane-icon{
+        .booking-icon{
             margin-left: var(--space-4);
-            width: var(--space-6);
-            height: var(--space-6);
-            filter: brightness(0) invert(1);
         }

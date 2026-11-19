@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { useBooking } from '../../hooks/useBooking';
 import { Logo } from '../../components/Logo/Logo';
+import { Icon } from '../Icon/Icon';
 import styles from './HeaderDesktop.module.css'
 
 export function HeaderDesktop() {
@@ -62,11 +63,12 @@ return (
             onClick={openBooking}
           >
             Book a Meeting
-            <img 
-                className={styles['paper-plane-icon']}
-                src=".\src\assets\paper-plane.svg" 
-                alt="paper-plane-icon"
-            />
+            <Icon
+              name='send'
+              className={styles['booking-icon']}
+            >
+
+            </Icon>
           </button>
 
       </div>
