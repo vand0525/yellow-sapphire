@@ -1,19 +1,19 @@
 import { NavLink } from 'react-router-dom';
 import { useBooking } from '../../hooks/useBooking';
-import '../../styles/HeaderDesktop.css'
+import styles from './HeaderDesktop.module.css'
 
 export function HeaderDesktop() {
   const { openBooking } = useBooking();
 
 return (
-    <header className="header-desktop">
-      <div className="header-container">
+    <header className={styles['header-desktop']}>
+      <div className={styles['header-container']}>
 
-        <NavLink to="/" className="logo-box">
-          <img className="header-logo" src=".\src\assets\logo.svg" alt="" />
+        <NavLink to="/" className={styles['logo-box']}>
+          <img className={styles['header-logo']} src=".\src\assets\logo.svg" alt="" />
         </NavLink>
 
-        <nav className="pages-nav" aria-label="Main navigation">
+        <nav className={styles['pages-nav']} aria-label="Main navigation">
           <NavLink 
             to="/" 
             style={({ isActive }) => ({
@@ -57,12 +57,12 @@ return (
 
           <button
             type="button"
-            className="header-booking-btn"
+            className={styles['header-booking-btn']}
             onClick={openBooking}
           >
             Book a Meeting
             <img 
-                className='paper-plane-icon'
+                className={styles['paper-plane-icon']}
                 src=".\src\assets\paper-plane.svg" 
                 alt="paper-plane-icon"
             />
