@@ -2,8 +2,9 @@
 .header-container{
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    margin: var(--space-6) var(--space-gutter);
+    justify-content: space-between;
+    gap: var(--space-8);
+    margin: var(--space-8) var(--space-0);
 }
 
 /* LOGO CSS ================================================== */
@@ -54,7 +55,7 @@
     .header-booking-btn{
         display: flex;
         cursor: pointer;
-        padding: var(--space-4) var(--space-5);
+        padding: var(--space-6) var(--space-6);
         color: var(--color-on-primary);
         font-family: var(--font-body);
         font-size: var(--text-title-large-size);
@@ -78,3 +79,8 @@
         .booking-icon{
             margin-left: var(--space-4);
         }
+
+/* Responsive header ----------------------------------------------------------------------*/
+@media(max-width:1200px){
+    
+}

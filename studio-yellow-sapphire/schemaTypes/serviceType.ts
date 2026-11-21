@@ -17,6 +17,16 @@ export const serviceType = defineType({                             // export it
             validation: (Rule) => Rule.required(),                  // input is mandatory
         }),
         defineField({
+            name: 'slug',
+            title: 'URL Slug',
+            type: 'slug',
+            options: {
+                source: 'name',
+                maxLength: 96,
+            },
+            validation: (Rule) => Rule.required(),
+        }),
+        defineField({
             name: 'description',
             title: 'Service Description',
             type: 'text',                                           // multiline text input
@@ -44,8 +54,127 @@ export const serviceType = defineType({                             // export it
             },
             validation:(Rule) => Rule.required(),
         }),
-    ],
-    
+        defineField({
+            name: 'whatWeDoDescription',
+            title: 'What We Do - Section Description',
+            type: 'text',
+            rows: 3,
+        }), 
+        defineField({
+            name: 'whatWeDo',
+            title: 'What We Do - Cards',
+            type: 'array',
+            of: [
+                {
+                type: 'object',
+                fields: [
+                    defineField({
+                        name: 'title',
+                        title: 'Title',
+                        type: 'string',
+                        validation: (Rule) => Rule.required(),
+                    }),
+                    defineField({
+                        name: 'description',
+                        title: 'Description',
+                        type: 'text',
+                        rows: 4,
+                    }),
+                    defineField({
+                        name: 'image',
+                        title: 'Image',
+                        type: 'image',
+                        options: { hotspot: true },
+                    }),
+                ],
+                preview: {
+                        select: {
+                        title: 'title',
+                        media: 'image',
+                    },
+                },
+                },
+            ],
+        }),
+        defineField({
+            name: 'whoWeHelpDescription',
+            title: 'Who We Help - Section Description',
+            type: 'text',
+            rows: 3,
+        }), 
+        defineField({
+            name: 'whoWeHelp',
+            title: 'Who We Help',
+            type: 'array',
+            of: [
+                {
+                type: 'object',
+                fields: [
+                    defineField({
+                        name: 'image',
+                        title: 'Icon',
+                        type: 'image',
+                        options: { hotspot: true },
+                    }),
+                    defineField({
+                        name: 'title',
+                        title: 'Title',
+                        type: 'string',
+                        validation: (Rule) => Rule.required(),
+                    }),
+                    defineField({
+                        name: 'description',
+                        title: 'Description',
+                        type: 'text',
+                        rows: 4,
+                    }),
+                ],
+                preview: {
+                        select: {
+                        title: 'title',
+                        media: 'image',
+                    },
+                },
+                },
+            ],
+        }), 
+        defineField({
+            name: 'howWeWorkDescription',
+            title: 'How We Work - Section Description',
+            type: 'text',
+            rows: 3,
+        }), 
+        defineField({
+            name: 'howWeWork',
+            title: 'How We Work',
+            type: 'array',
+            of: [
+                {
+                type: 'object',
+                fields: [
+                    defineField({
+                        name: 'title',
+                        title: 'Title',
+                        type: 'string',
+                        validation: (Rule) => Rule.required(),
+                    }),
+                    defineField({
+                        name: 'description',
+                        title: 'Description',
+                        type: 'text',
+                        rows: 4,
+                    }),
+                ],
+                preview: {
+                        select: {
+                        title: 'title',
+                        media: 'image',
+                    },
+                },
+                },
+            ],
+        }), 
+    ],   
     preview: {                                                     // control how services appear in studio
         select: {                                                  // display name -> category -> image
             title: 'name',
@@ -53,4 +182,6 @@ export const serviceType = defineType({                             // export it
             media:'image',
         },
     },
+    
+    
 })
