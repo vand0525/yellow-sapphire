@@ -32,6 +32,8 @@
   --text-headline-small-line: 2rem;
   --text-title-large-size: 1.375rem;
   --text-title-large-line: 1.75rem;
+  --text-body-xl-size: 1.25rem;
+  --text-body-xl-line: 1.75rem;
   --text-body-large-size: 1rem;
   --text-body-large-line: 1.5rem;
   --text-body-medium-size: 0.875rem;
@@ -40,6 +42,8 @@
   --text-label-large-line: 1.25rem;
   --text-label-medium-size: 0.75rem;
   --text-label-medium-line: 1rem;
+  --text-label-small-size:0.75rem;
+  --text-label-small-line:0.75rem;
 
   /* Type scale — mobile */
   --text-display-small-size: 2.25rem;
@@ -59,15 +63,18 @@
 
   /* Spacing */
   --space-0: 0px;
+  --space-1p:1px;
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;
   --space-4: 16px;
   --space-5: 20px;
   --space-6: 24px;
+  --space-7: 28px;
   --space-8: 32px;
   --space-10: 40px;
   --space-12: 48px;
+  --space-14: 56px;
   --space-16: 64px;
   --space-20: 80px;
 
@@ -84,9 +91,9 @@
   --radius-lg: 10px;
 
   /* Shadows */
-  --shadow-sm: 0 0px 3px rgba(0, 0, 0, 0.2);
-  --shadow-md: 0 0px 6px rgba(0, 0, 0, 0.2);
-  --shadow-lg: 0 0px 12px rgba(0, 0, 0, 0.2);
+  --shadow-sm: 0 0px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 0px 6px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 0px 15px rgba(0, 0, 0, 0.25);
   --shadow-white-md: 0 0 12px rgba(255, 255, 255, 0.2);
 
   /* Transitions */

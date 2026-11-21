@@ -1,48 +1,15 @@
 import styles from './ServicesDesktop.module.css'                   
 import { Link } from 'react-router-dom'
-import { useState, useEffect } from 'react'
-import { getServices, type Service } from '../../lib/services'
+import type { Service} from '../../lib/services';
 import { Icon } from '../../components/Icon/Icon'
 
 
+type Props = {
+  services: Service[];
+}
 
-export function ServicesDesktop() {
-
-  // Fetch the data from sanity Studio ----------------------------------------------------------------------------------
-  const [services, setServices] = useState<Service[]>([])                               // store services
-  const [loading, setLoading] = useState(true);                                         // indicate loading data
-  const [error, setError] = useState<string | null>(null)                               // store fetching error
-
-  useEffect(()=>{                                                                         
-    async function loadServices(){
-      try{
-        const data = await getServices();                                               // get data from sanity
-        setServices(data);                                                              // update the page with data
-        //console.log(data);
-        //throw new Error('Testing error')
-      } catch (error){
-        setError('Unable to load services. Please try again later.')
-        console.error('Failed to load services', error)
-      } finally {
-        setLoading(false)
-      }
-    }
-    loadServices();
-  }, [])
-  // --------------------------------------------------------------------------------------------------------------------
-
-
-  // Show loading services message ========================================
-  if (loading) {
-    return <p className={styles['services-loading']}>Loading services...</p>
-  }
-
-   // Show error alert ====================================================
-
-  if (error) {
-    return <p className={styles['services-error']} role="alert">{error}</p>
-  }
-
+export function ServicesDesktop({services} : Props) {
+  
 
   return (
     <main className={styles['services-page']}>
@@ -57,10 +24,10 @@ export function ServicesDesktop() {
       {/* Major Services ---------------------------------------------------------------------------------------*/} 
       <section className={styles['major-services-grid']}>
         {services
-          .filter((service) => service.category === 'major')                      // Filter out minor services
-          .map((service, index) =>                                                       // map major services then render
+          .filter((service) => service.category === 'major')                // Filter out minor services
+          .map((service, index) =>                                          // map major services then render
             <Link
-              to="/services" 
+              to={`/services/${service.slug}`}
               className={styles['major-service-card']}
               key={service._id}>
 
@@ -108,7 +75,7 @@ export function ServicesDesktop() {
           .filter((service) => service.category === 'minor')                       // Filter out major services
           .map((service) =>                                                        // map minor services then render                                                  
             <Link
-            to="/services" 
+            to={`/services/${service.slug}`} 
             className={styles['minor-service-card']}
             key={service._id}>
                 <div className={styles['minor-service-accent']} aria-hidden="true"></div>
