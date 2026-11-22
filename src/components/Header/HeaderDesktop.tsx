@@ -8,8 +8,7 @@ export function HeaderDesktop() {
   const { openBooking } = useBooking();
 
 return (
-    <header className={styles['header-desktop']}>
-      <div className={styles['header-container']}>
+    <header className={styles['header-container']}>
 
         <NavLink to="/" className={styles['header-logo']}>
           <Logo variant='headerDesktop'  />
@@ -26,7 +25,7 @@ return (
           Home
           </NavLink>
 
-                    <NavLink 
+          <NavLink 
             to="/about" 
             style={({ isActive }) => ({
               fontWeight: isActive ? 'bold' : 'normal',
@@ -36,7 +35,7 @@ return (
           About
           </NavLink>
 
-                    <NavLink 
+          <NavLink 
             to="/services" 
             style={({ isActive }) => ({
               fontWeight: isActive ? 'bold' : 'normal',
@@ -46,7 +45,7 @@ return (
           Services
           </NavLink>
 
-                    <NavLink 
+          <NavLink 
             to="/testimonials" 
             style={({ isActive }) => ({
               fontWeight: isActive ? 'bold' : 'normal',
@@ -71,7 +70,7 @@ return (
             </Icon>
           </button>
 
-      </div>
+
     </header>
   );
 }

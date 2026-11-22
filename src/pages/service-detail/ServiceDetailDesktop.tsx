@@ -12,7 +12,7 @@ type Props = {
 }
 
 export function ServiceDetailDesktop({services, testimonials} : Props) {
-
+  
   return (
     <main className={styles.ServiceDetailDesktop}> 
       {/* serviceDetailsHero ------------------------------------------------------------------------- */}
@@ -147,51 +147,51 @@ export function ServiceDetailDesktop({services, testimonials} : Props) {
         </div>
 
         <div className={styles.relatedTestimonialsContent}>
-          {testimonials.map((item)=>(
-            <Link to="/testimonials" className={styles.relatedTestimonialCard} key={item._id}>  
-              <div className={styles.testimonialServiceType}>
-                <Icon name='shieldCheck' size='sm'></Icon>
-                <p>{item.serviceType}</p>
-              </div>
-
-              <div className={styles.testimonialContent}>
-                <h3 className={styles.testimonialtitle}>
-                  {item.name}
-                </h3>
-                <div className={styles.testimonialDescription}>
-                  <Icon 
-                    className={styles.testimonialIcon} 
-                    name='quote' 
-                    size='md'
-                  > 
-                  </Icon>
-                  <p>
-                    {item.description}
-                  </p>
+          {testimonials
+            .filter((item) => item.serviceType === services.name)          // map the same services type of the page
+            .map((item)=>(
+              <div className={styles.relatedTestimonialCard} key={item._id}>  
+                <div className={styles.testimonialServiceType}>
+                  <Icon name='shieldCheck' size='sm'></Icon>
+                  <p>{item.serviceType}</p>
                 </div>
 
-                <div className={styles.testimonialPersonDetails}>
-                  <p className={styles.testimonialPersonNameJob}>
-                    {item.clientName}
-                  </p>
-                  <div className={styles.testimonialCompanyDetails}>
-                    <p className={styles.testimonialCompany}>
-                      {item.companyName}
+                <div className={styles.testimonialContent}>
+                  <h3 className={styles.testimonialtitle}>
+                    {item.name}*
+                  </h3>
+                  <div className={styles.testimonialDescription}>
+                    <Icon 
+                      className={styles.testimonialIcon} 
+                      name='quote' 
+                      size='md'
+                    > 
+                    </Icon>
+                    <p>
+                      {item.description}
                     </p>
-                    <p className={styles.testimonialCompanyLocation}>
-                      {item.companyLocation}
+                  </div>
+
+                  <div className={styles.testimonialPersonDetails}>
+                    <p className={styles.testimonialPersonNameJob}>
+                      {item.clientName}
                     </p>
+                    <div className={styles.testimonialCompanyDetails}>
+                      <p className={styles.testimonialCompany}>
+                        {item.companyName}
+                      </p>
+                      <p className={styles.testimonialCompanyLocation}>
+                        {item.companyLocation}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </Link>
           ))}
-
         </div>   
 
-        <div className={styles.seeMoreTestimonies} >
-          <Link to="/testimonials"> See More</Link>
-        </div>
+
+        <Link to="/testimonials" className={styles.seeMoreTestimonies}> See More</Link>
       </section>
 
     </main>

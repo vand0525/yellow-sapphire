@@ -282,11 +282,6 @@
             box-shadow: var(--shadow-lg);
         }  
 
-        .relatedTestimonialCard:active{
-            background-color: var(--color-surface-active);
-            scale: var(--scale-active);
-        }
-
             .testimonialServiceType{
                 display: inline-flex;
                 align-items: center;
@@ -374,21 +369,14 @@
         padding: var(--space-4) var(--space-3);
         box-shadow: var(--shadow-md);
         transition: var( --transition-normal);
+        text-decoration: none;
+        color: var(--color-secondary);
+        font-size: var(--text-body-xl-size);
     }   
         .seeMoreTestimonies:hover{
             background-color: var(--color-secondary);
             color: var(--color-on-primary);
         }
-
-        .seeMoreTestimonies:hover a{
-            color: var(--color-on-primary);
-        }
         .seeMoreTestimonies:active{
             scale: var(--scale-active);
         }
-
-    .seeMoreTestimonies a{
-        text-decoration: none;
-        color: var(--color-secondary);
-        font-size: var(--text-title-large-size);
-    }

@@ -18,7 +18,7 @@
     font-family: var(--font-display);
     font-size: var(--text-headline-size);
     line-height: var(--text-headline-line);
-    margin-bottom: var(--space-3);
+    margin-bottom: var(--space-5);
 }
 .service-description{
     font-family: var(--font-body);
@@ -72,7 +72,6 @@
     .major-service-card{
         display: flex;
         position: relative;
-        /* min-width: 800px; */
         text-decoration: none;
         border: 1px solid var(--color-outline);
         border-radius: var(--radius-lg);
@@ -96,10 +95,10 @@
             flex: 1;
         }
                 .major-service-image{
-                    width: 200px;
+                    width: 300px;
                     margin-right: var(--space-12);
                     padding: var(--space-6) var(--space-8);
-                    box-shadow: var(--shadow-md);
+                    box-shadow: var(--shadow-lg);
                     object-fit: contain;
                 }
                 .major-service-image-0{
@@ -143,13 +142,13 @@
                     align-self: flex-end;
                     text-decoration: none;
                     gap: var(--space-3);
-                    padding: var(--space-3) var(--space-4);
-                    border: 2px solid var(--color-secondary);
+                    padding: var(--space-2) var(--space-4);
+                    border: var(--space-1) solid var(--color-secondary);
                     border-radius: var(--radius-md);
                     color: var(--color-secondary);
                     font-family: var(--font-body);
-                    font-size: var(--text-label-size);
-                    line-height: var(--text-label-line);
+                    font-size: var(--text-body-size);
+                    font-weight: bold;
                     margin-top: var(--space-5);
                     transition:  var(--transition-fast);
                 }
@@ -243,17 +242,18 @@
                 .minor-learn-link{
                     display: flex;
                     justify-content: flex-end;
-                    margin-top:  auto ;
+                    margin-top: var(--space-10);
                     text-decoration: none;
                     align-items: center;
                     align-self: flex-end;
                     gap: var(--space-3);
-                    padding: var(--space-3) var(--space-4);
-                    border: 2px solid var(--color-outline);
+                    padding: var(--space-2) var(--space-4);
+                    border: var(--space-1) solid var(--color-outline);
                     border-radius: var(--radius-md);
-                    color: var(--color-outline);
                     font-family: var(--font-body);
-                    font-size: var(--text-label-size);
+                    font-size: var(--text-body-size);
+                    font-weight: bold;
+                    color: var(--color-outline);
                     line-height: var(--text-label-line);
                     transition: var(--transition-fast);
                 }

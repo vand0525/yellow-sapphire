@@ -5,6 +5,7 @@
     justify-content: space-between;
     gap: var(--space-8);
     margin: var(--space-8) var(--space-0);
+    background-color: var(--color-on-primary);
 }
 
 /* LOGO CSS ================================================== */
@@ -30,17 +31,17 @@
 /* NAV PAGES CSS ============================================= */
 .pages-nav{
     display: flex;
-    gap: var(--space-3);
+    gap: var(--space-10);
 }   
     .pages-nav > a{
         text-decoration: none;
         color: var(--color-secondary);
         font-size: var(--text-headline-medium-size);
+        font-family: var(--font-body);
         line-height: var(--text-headline-medium-line);
         padding: var(--space-4) var(--space-5);
         border-radius: var(--radius-lg);
         transition: var(--transition-fast);
-        font-family: var(--font-display);
     }
     .pages-nav > a:hover{
         background-color: var(--color-secondary);
@@ -58,8 +59,7 @@
         padding: var(--space-6) var(--space-6);
         color: var(--color-on-primary);
         font-family: var(--font-body);
-        font-size: var(--text-title-large-size);
-        line-height: var(--text-title-large-line);
+        font-size: var(--text-headline-small-size);
         font-weight: 700;
         background-color: var(--color-primary);
         border: none;
@@ -69,6 +69,7 @@
     }   
         .header-booking-btn:hover{
             background-color: var(--color-secondary);
+
         }
 
         .header-booking-btn:active{
