@@ -13,7 +13,7 @@ export type Testimonial = {
   companyLocation: string
 }
 
-// request studio published data---------------------------------------------------------------------------
+// function to fetch studio published data---------------------------------------------------------------------------
 export async function getTestimonials(): Promise<Testimonial[]> {
   return sanityClient.fetch<Testimonial[]>(`
     *[_type == "testimonials"] | order(_createdAt asc) {

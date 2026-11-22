@@ -60,9 +60,9 @@ useEffect(() => {
   if (!service) return <p>Service not found.</p>;
 
   return isDesktop
-    ? <ServiceDetailDesktop 
-      services={service}
-      testimonials={testimonials}
-    />
-    : <ServiceDetailMobile />;
+          ? <ServiceDetailDesktop 
+            services={service}
+            testimonials={testimonials}
+          />
+          : <ServiceDetailMobile />;
 }

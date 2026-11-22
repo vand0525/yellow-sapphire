@@ -41,6 +41,19 @@ export const testimonials = defineType({                            // export it
             validation:(Rule) => Rule.required(),
         }),
         defineField({
+            name: 'serviceCategory',                                       // Service category is crutial here
+            title: 'Service Category',                              
+            type:'string',
+            options: {                                              // create choices with radio option style
+                list: [
+                    {title: 'Major Service', value: 'major'},
+                    {title: 'Minor Service', value: 'minor'},
+                ],
+                layout:'radio',
+            },
+            validation:(Rule) => Rule.required(),
+        }),
+        defineField({
             name: 'clientName',                                   
             title: 'Client Name',                                 
             type: 'string',                                         
