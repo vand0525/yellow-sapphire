@@ -264,3 +264,18 @@
 /* ================================================================================= */
 
 
+/* Responsive adjustments */
+@media (max-width: 850px) {
+    .major-service-card{
+        display: flex;
+        flex-direction: column;
+    }
+    .major-service-image{
+        width: 520px;
+        margin-right: var(--space-12);
+        margin-bottom: var(--space-6);
+        padding: 90px;
+        box-shadow: var(--shadow-lg);
+        object-fit: contain;
+    }
+}

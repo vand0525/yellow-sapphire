@@ -1,0 +1,124 @@
+/* BOOKING SECTION ========================================================== */
+
+.footer-booking-section{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-on-primary-container);
+    color: var(--color-primary-container);
+    padding: var(--space-8) var(--space-gutter);
+    gap: var(--space-6);
+}
+
+    .footer-booking-title{
+        font-family: var(--font-display);
+        font-size: var(--text-headline-medium-size);
+        line-height: var(--text-headline-medium-line);
+        font-weight: 400;
+        margin-bottom: var(--space-3);
+    }
+
+    .footer-booking-description{
+        font-family: var(--font-body);
+        font-size: var(--text-body-size);
+        line-height: var(--text-body-line);
+    }
+
+    .footer-booking-btn{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-self: center;
+        cursor: pointer;
+        width: 100%;
+        box-sizing: border-box;
+        padding: var(--space-3) var(--space-5);
+        min-height: var(--size-button);
+        color: var(--color-on-primary);
+        font-family: var(--font-body);
+        font-size: var(--text-body-size);
+        font-weight: 500;
+        line-height: var(--text-body-line);
+        background-color: var(--color-primary);
+        border: none;
+        border-radius: var(--radius-md);
+        transition: var(--transition-normal);
+    }
+
+        .footer-booking-btn:hover{
+            background-color: var(--color-secondary);
+        }
+
+        .footer-booking-btn:active{
+            box-shadow: var(--shadow-white-md);
+            background-color: var(--color-secondary);
+            scale: var(--scale-active);
+        }
+
+/* ================================================================================= */
+
+
+/* BRAND / COPYRIGHT SECTION ======================================================= */
+
+.footer-copyright-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: var(--space-5) var(--space-0);
+    padding-inline: var(--space-gutter);
+    gap: var(--space-4);
+}
+
+    .footer-logo{
+        transition: var(--transition-normal);
+        padding: var(--space-3) var(--space-4);
+        border-radius: var(--radius-lg);
+    }
+
+    .footer-logo:hover{
+        background-color: var(--color-secondary);
+    }
+
+    .footer-logo:hover > span{
+        color: var(--color-on-primary);
+    }
+
+    .footer-logo:active{
+        scale: var(--scale-active);
+        color: var(--color-on-primary);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .legal-nav{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: var(--space-6);
+        font-size: var(--text-label-size);
+        line-height: var(--text-label-line);
+        width: 100%;
+    }
+
+        .legal-nav a{
+            text-decoration: none;
+            color: var(--color-secondary);
+            font-family: var(--font-body);
+            padding: var(--space-2) var(--space-3);
+            border-radius: var(--radius-lg);
+            transition: var(--transition-normal);
+        }
+
+            .legal-nav > a:hover{
+                background-color: var(--color-secondary);
+                color: var(--color-on-primary);
+            }
+
+            .legal-nav > a:active{
+                box-shadow: var(--shadow-sm);
+                background-color: var(--color-secondary);
+                color: var(--color-on-primary);
+                scale: var(--scale-active);
+            }
+
+/* ================================================================================= */
