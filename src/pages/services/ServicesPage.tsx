@@ -45,5 +45,7 @@ export function ServicesPage() {
     return <p role="alert">{error}</p>
   }
 
-  return isDesktop ? <ServicesDesktop services={services} /> : <ServicesMobile />;
+  return isDesktop 
+  ? <ServicesDesktop services={services} /> 
+  : <ServicesMobile services={services} />;
 }

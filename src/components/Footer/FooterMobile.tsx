@@ -1,14 +1,51 @@
 import { useBooking } from '../../hooks/useBooking';
+import { NavLink } from 'react-router-dom';
+import { Logo } from '../../components/Logo/Logo';
+import { Icon } from '../Icon/Icon';
+import styles from "./FooterMobile.module.css"
 
 export function FooterMobile() {
   const { openBooking } = useBooking();
 
   return (
-    <footer>
-      <p>Footer (mobile)</p>
-      <button type="button" onClick={openBooking}>
-        Book a meeting
-      </button>
+    <footer className={styles['footer-desktop']}>
+
+      <section className={styles['footer-booking-section']}>
+        <div>
+          <h2 className={styles['footer-booking-title']}  >Let's Discuss Your Next Steps.</h2>
+          <p className={styles['footer-booking-description']}>
+            Choose a time that works for you through Google Workspace
+            and receive an automatic calendar invitation.
+          </p>
+        </div>
+
+        <button
+            type="button"
+            className={styles['footer-booking-btn']}
+            onClick={openBooking}
+          >
+            Book a Meeting
+            <Icon name='send'></Icon>
+        </button>
+      </section>
+
+
+      <section className={styles['footer-copyright-section']}>
+        <NavLink to="/" className={styles['footer-logo']}>
+          <Logo variant='footerDesktop'  />
+        </NavLink>
+
+        <div className={styles['legal-nav']} >
+          <p>© {new Date().getFullYear()} Yellow Sapphire. All rights reserved.</p>
+          <div>
+            <NavLink to="/privacy">Privacy</NavLink> |
+            <NavLink to="/policy">Policy</NavLink> |
+            <NavLink to="/Accessibility">Accessibility</NavLink>
+          </div>
+        </div>
+
+      </section>
+
     </footer>
   );
 }
