@@ -32,20 +32,17 @@
     text-decoration: none;
 }
 
-.header-logo:hover {
-    background-color: var(--color-secondary);
-}
-
-.header-logo:hover > span {
-    color: var(--color-on-primary);
-}
 
 .header-logo:active {
     scale: var(--scale-active);
     color: var(--color-on-primary);
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-lg);            
+    background-color: var(--color-secondary);
 }
 
+.header-logo:active span {
+    color: var(--color-on-primary);
+}
 
 /* Toggle Button ================================================= */
 .toggle-menu-btn {
@@ -65,9 +62,6 @@
     z-index: 10;
 }
 
-.toggle-menu-btn:hover {
-    background-color: var(--color-secondary);
-}
 
 .toggle-menu-btn:active {
     scale: var(--scale-active);
@@ -84,7 +78,6 @@
     left: 0;
     z-index: 100;
     width: 100%;
-    height: 60dvh;
     background-color: var(--color-on-primary);
     padding: var(--space-4) var(--space-6);
     box-shadow: var(--shadow-lg);
@@ -102,15 +95,13 @@
     transition: var(--transition-fast);
 }
 
-.pages-nav > a:hover {
-    background-color: var(--color-secondary);
-    color: var(--color-on-primary);
-}
 
 .pages-nav > a:active {
     box-shadow: var(--shadow-lg);
     background-color: var(--color-secondary);
     scale: var(--scale-active);
+    background-color: var(--color-secondary);
+    color: var(--color-on-primary);
 }
 
 /* BOOKING BUTTON ================================================ */
@@ -120,6 +111,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    margin-top: var(--space-6);
     width: 100%;
     padding: var(--space-3) var(--space-4);
     color: var(--color-on-primary);
@@ -133,13 +125,13 @@
     transition: var(--transition-fast);
 }
 
-.header-booking-btn:hover {
-    background-color: var(--color-secondary);
-}
+
 
 .header-booking-btn:active {
     box-shadow: var(--shadow-lg);
     scale: var(--scale-active);
+    background-color: var(--color-secondary);
+    color: var(--color-on-primary);
 }
 
 .booking-icon {

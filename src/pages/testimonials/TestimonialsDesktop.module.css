@@ -7,17 +7,18 @@ main{
 /* Terstimonials Header =============================================== */
 .TestimonialHeader{
     margin-top: var(--space-8);
-    color: var(--color-secondary);
 }
 
 .TestimonialHeaderTitle{
     margin-bottom: var(--space-8);
+    color: var(--color-secondary);
 }
 .TestimonialHeaderDescription{
     border-left: var(--space-1) solid var(--color-primary);
     padding-left: var(--space-4);
     font-size: var(--text-title-large-size);
     line-height: var( --text-title-large-line);
+    color: var(--color-secondary);
 }
 
 /* .Testimonials Navigation bar / filters ============================== */

@@ -44,10 +44,6 @@
         transition: var(--transition-normal);
     }
 
-        .footer-booking-btn:hover{
-            background-color: var(--color-secondary);
-        }
-
         .footer-booking-btn:active{
             box-shadow: var(--shadow-white-md);
             background-color: var(--color-secondary);
@@ -75,11 +71,11 @@
         border-radius: var(--radius-lg);
     }
 
-    .footer-logo:hover{
+    .footer-logo:active{
         background-color: var(--color-secondary);
     }
 
-    .footer-logo:hover > span{
+    .footer-logo:active > span{
         color: var(--color-on-primary);
     }
 
@@ -100,6 +96,10 @@
         width: 100%;
     }
 
+        .legal-nav p{
+            text-align: center;
+        }
+
         .legal-nav a{
             text-decoration: none;
             color: var(--color-secondary);
@@ -108,11 +108,6 @@
             border-radius: var(--radius-lg);
             transition: var(--transition-normal);
         }
-
-            .legal-nav > a:hover{
-                background-color: var(--color-secondary);
-                color: var(--color-on-primary);
-            }
 
             .legal-nav > a:active{
                 box-shadow: var(--shadow-sm);
