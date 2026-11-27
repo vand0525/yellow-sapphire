@@ -30,8 +30,9 @@ export function TestimonialsPage() {
 
   return isDesktop 
           ? <TestimonialsDesktop 
-            testimonials={testimonials} 
+              testimonials={testimonials} 
             /> 
-          : 
-          <TestimonialsMobile />;
+          : <TestimonialsMobile             
+              testimonials={testimonials} 
+            /> 
 }

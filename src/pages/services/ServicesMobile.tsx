@@ -2,6 +2,7 @@ import styles from './ServicesMobile.module.css'
 import { Link } from 'react-router-dom'
 import type { Service} from '../../lib/services';
 import { Icon } from '../../components/Icon/Icon'
+import { useCarousel } from '../../hooks/useCarousel';
 
 
 type Props = {
@@ -9,14 +10,20 @@ type Props = {
 }
 
 export function ServicesMobile({services} : Props) {
-  
+
+  const {
+    activeIndex,
+    carouselRef,
+    goToSlide,
+    handleScroll
+  } = useCarousel();
 
   return (
     <main className={styles['services-page']}>
       
       {/* SERVICE INTRO ======================================================================================================================= */}
       <section className={styles['services-intro']}>
-        <h1>Our Services. (Mobile)</h1>
+        <h1>Our Services.</h1>
         <p>Our core services focus on helping organizations embrace new opportunities, overcome challenges, and achieve meaningful results.</p>
       </section>
 
@@ -81,7 +88,11 @@ export function ServicesMobile({services} : Props) {
           <span></span>
       </div>
 
-      <section className={styles['minor-services-grid']}>
+      <section 
+        className={styles['minor-services-grid']} 
+        ref={carouselRef}
+        onScroll={handleScroll}
+      >        
         {services
           .filter((service) => service.category === 'minor')                       // Filter out major services
           .map((service) =>                                                        // map minor services then render                                                  
@@ -102,7 +113,27 @@ export function ServicesMobile({services} : Props) {
                 </div>
             </Link>                                                                              
           )}
+          
       </section>
+
+      {/* Carousel sections ---------------------------------------------------------------------- */}
+      <section className={styles['carousel-section']}>
+            {services
+              .filter((service)=> service.category === 'minor')
+              .map((item, index) => (
+                <button
+                    key={item._id}
+                    className={
+                        activeIndex === index
+                            ? styles.activeDot
+                            : styles.dot
+                    }
+                    onClick={() => goToSlide(index)}
+                    aria-label={`Go to slide ${index + 1}`}
+                    aria-current={activeIndex === index}
+                />
+            ))}
+          </section>
     </main>
     )
   }

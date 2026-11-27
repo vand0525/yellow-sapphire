@@ -40,14 +40,13 @@
 
 .services-intro {
     margin-bottom: var(--space-10);
-    padding-inline: var(--space-5);
 }
 
 .services-intro h1 {
     margin-bottom: var(--space-4);
     color: var(--color-secondary);
     font-family: var(--font-display);
-    font-size: var(--text-display-medium-size);
+    font-size: var(--text-headline-medium-size);
     line-height: var(--text-display-line);
 }
 
@@ -101,14 +100,15 @@
     background-color: var(--color-tertiary-container);
 }
 
-.major-service-card:hover {
-    scale: var(--scale-hover);
-    box-shadow: var(--shadow-lg);
-}
 
 .major-service-card:active {
     background-color: var(--color-surface-active);
     scale: var(--scale-active);
+}
+
+.major-service-card:active .major-learn-link {
+    background-color: var(--color-secondary);
+    color: var(--color-on-primary);
 }
 
 .major-service-information {
@@ -201,10 +201,7 @@
     transition: var(--transition-fast);
 }
 
-.major-learn-link:hover {
-    background-color: var(--color-secondary);
-    color: var(--color-on-primary);
-}
+
 
 /* ================================================================================= */
 
@@ -217,13 +214,12 @@
     justify-content: space-between;
     gap: var(--space-5);
     margin-bottom: var(--space-6);
-    padding-inline: var(--space-5);
 }
 
 .minor-service-header h1 {
     color: var(--color-secondary);
     font-family: var(--font-display);
-    font-size: var(--text-display-medium-size);
+    font-size: var(--text-headline-medium-size);
     line-height: var(--text-display-line);
 }
 
@@ -241,39 +237,65 @@
 
 .minor-services-grid {
     display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
     gap: var(--space-8);
-    margin-bottom: var(--space-12);
     padding-inline: var(--space-5);
+    scroll-padding-inline: var(--space-5);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
 }
 
 .minor-service-card {
     display: flex;
+    flex: 0 0 100%;
     flex-direction: column;
-    flex: none;
     position: relative;
-    text-decoration: none;
-    border: 1px solid var(--color-outline);
-    border-radius: var(--radius-lg);
+    scroll-snap-align: start;
+    box-sizing: border-box;
+    margin-bottom: var(--space-10);
     background-color: var(--color-on-primary);
+    border: 1px solid var(--color-outline);
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    overflow: hidden;
     box-shadow: var(--shadow-md);
     transition: var(--transition-normal);
-    overflow: hidden;
-    width: 100%;
     min-width: 0;
-    box-sizing: border-box;
 }
 
-.minor-service-card:hover {
-    scale: var(--scale-hover);
-    box-shadow: var(--shadow-lg);
-}
 
 .minor-service-card:active {
     background-color: var(--color-surface-active);
     scale: var(--scale-active);
 }
+
+/* Carousel --------------------------------- */
+.carousel-section {
+    width: 100%;
+    min-width: 0;
+    display: flex;
+    justify-content: center;
+    gap: var(--space-8);
+}
+
+.dot,
+.activeDot {
+    width: var(--space-3);
+    height: var(--space-3);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.dot {
+    background-color: var(--color-outline);
+}
+
+.activeDot {
+    background-color: var(--color-primary);
+}
+/* -------------------------------------- --- */
 
 .minor-service-accent {
     background-color: var(--color-outline);
@@ -284,8 +306,8 @@
 .minor-service-information {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     flex: 1;
-    justify-content: space-evenly;
     padding: var(--space-6) var(--space-5);
     min-width: 0;
 }
@@ -296,16 +318,16 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+    min-height: 120px;
 }
 
 .minor-learn-link {
     display: flex;
-    justify-content: flex-end;
-    margin-top: var(--space-8);
-    text-decoration: none;
     align-items: center;
     align-self: flex-end;
     gap: var(--space-3);
+    margin-top: var(--space-8);
+    text-decoration: none;
     padding: var(--space-2) var(--space-4);
     border: var(--space-1) solid var(--color-outline);
     border-radius: var(--radius-md);
@@ -317,9 +339,11 @@
     transition: var(--transition-fast);
 }
 
-.minor-learn-link:hover {
+.minor-service-card:active .minor-learn-link {
     background-color: var(--color-outline);
     color: var(--color-on-primary);
 }
 
 /* ================================================================================= */
+
+

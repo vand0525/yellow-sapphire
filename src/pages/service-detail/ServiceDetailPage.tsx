@@ -64,5 +64,8 @@ useEffect(() => {
             services={service}
             testimonials={testimonials}
           />
-          : <ServiceDetailMobile />;
+          : <ServiceDetailMobile 
+            services={service}
+            testimonials={testimonials}
+          />
 }
